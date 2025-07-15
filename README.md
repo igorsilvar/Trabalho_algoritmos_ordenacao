@@ -26,7 +26,7 @@ idade: Inteiro gerado aleatoriamente entre 18 e 67.
 
 Algoritmos de Ordenação
 Bubble Sort
-Explicação:O Bubble Sort ("ordenação por bolha") é um algoritmo simples que compara pares de elementos adjacentes no vetor e os troca se o nome em vetor[j] vier alfabeticamente após vetor[j+1]. O processo é repetido em várias passadas, movendo o maior elemento para o final em cada iteração, como bolhas subindo na água. No programa:
+Explicação:O Bubble Sort é um algoritmo simples que compara pares de elementos adjacentes no vetor e os troca se o nome em vetor[j] vier alfabeticamente após vetor[j+1]. O processo é repetido em várias passadas, movendo o maior elemento para o final em cada iteração, como bolhas subindo na água. No programa:
 
 Usa strcmp para comparar nomes.
 Chama a função trocar para realizar trocas.
@@ -49,7 +49,7 @@ Trocas: ( O(n^2) ), até ( \frac{n(n-1)}{2} ) no pior caso, cerca de ( \frac{n(n
 Tempo: ( O(n^2) ), ineficiente para vetores grandes devido aos loops aninhados.
 
 Selection Sort
-Explicação:O Selection Sort ("ordenação por seleção") seleciona o menor elemento restante no vetor em cada iteração e o coloca na posição correta. Ele percorre o vetor a partir da posição atual para encontrar o menor nome (usando strcmp) e troca com o elemento atual, se necessário. No programa:
+Explicação:O Selection Sort seleciona o menor elemento restante no vetor em cada iteração e o coloca na posição correta. Ele percorre o vetor a partir da posição atual para encontrar o menor nome (usando strcmp) e troca com o elemento atual, se necessário. No programa:
 
 Usa strcmp para comparar nomes.
 Chama a função trocar para realizar trocas.
@@ -109,38 +109,8 @@ Selection Sort: Faz o mesmo número de comparações que o Bubble Sort (4950), m
 Merge Sort: Faz muito menos comparações (537) e trocas (387), com um tempo médio muito menor (0.01 ms), mostrando a eficiência de ( O(n \log n) ).
 Trocas no Merge Sort: Contadas como atribuições durante a mesclagem, o que pode inflar o número em comparação com trocas diretas.
 
-Compilação e Execução
-Pré-requisitos
-
-Compilador C (ex.: GCC, MinGW no Windows).
-Ambiente como CLion ou terminal.
-
-Compilação
-No terminal:
-gcc ordenacao_pessoas.c -o programa
-
-No CLion:
-
-Substitua o conteúdo de main.c pelo código.
-Configure o CMakeLists.txt:cmake_minimum_required(VERSION 3.22)
-project(Trabalho_algoritmos_ordenacao C)
-set(CMAKE_C_STANDARD 11)
-add_executable(Trabalho_algoritmos_ordenacao ordenacao_pessoas.c)
 
 
-Clique em "Build" (Ctrl+F9).
-
-Execução
-No terminal:
-./programa
-
-No CLion:
-
-Clique em "Run" (Shift+F10).
-
-Saída Completa
-A saída da última execução é mostrada abaixo, com o vetor original e os resultados dos três algoritmos:
-Vetor original (primeiros 5 elementos):
 Fernanda0, 24
 Eduardo1, 36
 Carlos2, 64
@@ -191,16 +161,3 @@ Trocas no Merge Sort: Contadas como atribuições na mesclagem, inflando o núme
 Tempo Médio: Calculado sobre 1000 execuções para maior precisão, considerando a baixa resolução do clock() em alguns sistemas.
 Aleatoriedade: Nomes são únicos (ex.: "Ana12") para evitar ambiguidades na ordenação.
 
-Limitações
-
-Resolução do clock(): Em sistemas como Windows com MinGW, a resolução pode ser baixa, subestimando tempos para vetores pequenos.
-Memória no Merge Sort: Requer vetores temporários, aumentando o consumo de memória.
-Entrada de Dados: Usa dados aleatórios, sem suporte para entrada manual.
-
-Possíveis Melhorias
-
-Adicionar entrada de dados pelo usuário via scanf.
-Usar temporizadores de alta resolução (ex.: QueryPerformanceCounter no Windows).
-Aumentar o tamanho do vetor ou número de execuções para testes mais robustos.
-
-## 
